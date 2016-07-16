@@ -3,7 +3,7 @@
 % Alexandre Lopes (adapted from MathWorks docs)
 % 22.07.2015
 
-PORT = 56000;
+PORT = 59263;
 
 t = tcpip('localhost', PORT, 'NetworkRole', 'server');
 

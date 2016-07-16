@@ -1,0 +1,20 @@
+Note that running the same code twice, results in the second code block running
+faster than the first one (probably due to caching), therefore I split the
+sequencial and parallel codes.
+
+And here are the results on an Intel i5, xxx with 4 cores:
+
+-- OPEN MP --
+Total wall-time: 0.575594 s
+Total cpu-time:  2.155 s
+
+-- Sequential --
+Total wall-time: 1.58989 s
+Total cpu-time:  1.59034 s
+
+So OPEN MP does take more CPU time, but since it's spread across the 4 cores,
+it takes around 1/3 of the time of the sequential program.
+Also, since the sequential program only uses one core, the wall-time and
+the cpu-time are identical.
+
+Alexandre Lopes

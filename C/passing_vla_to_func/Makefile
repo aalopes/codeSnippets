@@ -2,7 +2,7 @@
 # Alexandre Lopes
 
 CC      = gcc
-OBJ     = $(pathsubst %.c, %.o, $(wildcard *.c))
+OBJ     = $(patsubst %.c, %.o, $(wildcard *.c))
 TARGET  = test
 INC_DIR =
 LIB_DIR =
@@ -10,9 +10,10 @@ LIB_DIR =
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
+	$(CC) $(OBJ) -o $@ $(LDFLAGS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(INC_DIR) -L$(LIB_DIR) $^ -o $@
+	$(CC) $(CFLAGS) -I$(INC_DIR) -L$(LIB_DIR) -c $< -o $@ $(LDFLAGS)
 
 clean:
-	rm -rf $(TARGET)
+	rm -rf $(TARGET) $(OBJ)

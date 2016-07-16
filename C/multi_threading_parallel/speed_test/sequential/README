@@ -1,0 +1,5 @@
+Note that running the same code twice, results in the second code block running
+faster than the first one (probably due to caching), therefore I split the
+sequencial and parallel codes into two separate programs.
+
+Alexandre Lopes

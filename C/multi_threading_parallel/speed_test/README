@@ -1,0 +1,11 @@
+These are simple tests for evaluating the performance of different
+multi-threading / code parallelization approaches.
+The tests are very synthetic and certainly not optimal. 
+In any case the objective is to have no race conditions or any ``dangerous''
+events, and to provide the results of all calculations to the parent / main
+thread.
+
+Also since the code is different between examples, it might not be comparable.
+
+Alexandre Lopes
+2016
