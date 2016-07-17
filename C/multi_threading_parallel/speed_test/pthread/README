@@ -1,0 +1,12 @@
+
+A small experiment comparing two scenarios:
+ 1) main thread performs a calculation loops as well (N_THREADS = 3)
+ 2) main thread just waits for threads to join -
+    an extra thread is created to do the job (N_THREADS = 4)
+
+with N_LOOP =  100000000
+
+on a 4-core CPU increased run-time from 6.1378 s to 8.08844 s .
+
+Alexandre Lopes
+2016

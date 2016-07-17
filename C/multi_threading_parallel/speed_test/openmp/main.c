@@ -4,7 +4,9 @@
 #include <math.h>
 #include <time.h>
 
-#define N_LOOP 100000000
+#define N_LOOP 20000000
+#define N_FAKE_THREADS 8
+#define N_TOTAL (N_LOOP*N_FAKE_THREADS)
 
 main(int argc, char *argv[]) 
 {
@@ -12,29 +14,37 @@ main(int argc, char *argv[])
     double elapsed_wall, elapsed_cpu;
     clock_t t_init_cpu, t_end_cpu;
     int i;
+    double res = 0;
 
-    double *a = malloc(sizeof(double)* N_LOOP);
+    double *a = malloc(sizeof(double)* N_TOTAL);
 
     /* begin timing */
     clock_gettime(CLOCK_MONOTONIC, &t_init_wall);
     t_init_cpu = clock();
 
+    /* main calculations */
     #pragma omp parallel for shared(a)
-    for(i = 0; i < N_LOOP; i++)
+    for(i = 0; i < N_TOTAL; i++)
     {
-        a[i] = log(exp( (double) i));
+        a[i] = sin(M_PI*(1+4*i)/2);
     }
 
     /* end timing */
     t_end_cpu = clock();
     clock_gettime(CLOCK_MONOTONIC, &t_end_wall);
 
+    /* summing everything */
+    for(i = 0; i < N_TOTAL; i++)
+    {
+        res += a[i] ;
+    }
+
     /* calculate elapsed time */
     elapsed_cpu =   (double)(t_end_cpu - t_init_cpu) / CLOCKS_PER_SEC;
     elapsed_wall =  (t_end_wall.tv_sec - t_init_wall.tv_sec);
     elapsed_wall += (t_end_wall.tv_nsec - t_init_wall.tv_nsec) / 1000000000.0; 
-
-    printf("Total number of operations: %g\n", (double) N_LOOP);
+    printf("Result:  %g \n", res);
+    printf("Total number of operations: %g\n", (double) N_TOTAL);
     printf("Total wall-time: %g s\n", elapsed_wall);
     printf("Total cpu-time:  %g s\n", elapsed_cpu);
 

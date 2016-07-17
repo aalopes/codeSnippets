@@ -1,11 +1,22 @@
 These are simple tests for evaluating the performance of different
 multi-threading / code parallelization approaches.
 The tests are very synthetic and certainly not optimal. 
-In any case the objective is to have no race conditions or any ``dangerous''
-events, and to provide the results of all calculations to the parent / main
-thread.
 
-Also since the code is different between examples, it might not be comparable.
+In any case the objective is to perform big loops whose results need to be
+summed at the end. The partial sums need to be made available to the
+parent process / main thread in the case of paralellization, so that the 
+data can be used and summed.
+
+In the sequential execution data is summed from the beginning, since there is
+no need to allocate a large array in memory, and incur an unnecessary overhead.
+
+The final summed result should be the number of loops (up to precision errors).
+
+No race conditions should arise.
+
+
+I have made basically no attempts to optimize this, but it shoud give an
+idea of the overhead of the different designs.
 
 Alexandre Lopes
 2016

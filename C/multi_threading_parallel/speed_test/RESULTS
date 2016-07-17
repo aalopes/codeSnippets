@@ -1,0 +1,26 @@
+These samples were tested on the following system:
+
+CPU: Intel(R) Core(TM) i7-2630QM CPU @ 2.00GHz (8 cores w/ HT)
+Mem: 2x3GiB SODIMM DDR3 Synchronous 1333 MHz
+OS: Ubuntu 14.04.3 LTS  (3.19.0-25-generic)
+
+With N_LOOP = 20000000 (N_FORK = 7 | N_EXTRA_THREADS = 7 | N_FAKE_THREADS = 8),
+i.e. 1.6e8 compound operations, a total of 8 processes/threads to match the
+number of cores on my CPU, I get the following results:
+
++------------+---------------+--------------+
+|    Test    | Wall-time (s) | CPU-time (s) |
++------------+---------------+--------------+
+| fork       |       1.16968 | 1.16929 (*)  |
+| openmp     |       1.60005 | 11.8974      |
+| pthread    |       2.14837 | 15.0023      |
+| sequential |       8.77396 | 8.77111      |
++------------+---------------+--------------+
+
+* meaningless value since only one of the processes was measured.
+It's also not important. For the 8 processes it will be around 8 times
+this, i.e. ca. 9.35432 s.
+
+Note that wall-time is what's actually relevant. The CPU-time for a threaded
+program is obviously higher than for a sequential one due to increased overhead.
+In any case, the results of the parallelization result in a smaller wall-time.
