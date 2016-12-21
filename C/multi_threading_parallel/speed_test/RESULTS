@@ -21,6 +21,11 @@ number of cores on my CPU, I get the following results:
 It's also not important. For the 8 processes it will be around 8 times
 this, i.e. ca. 9.35432 s.
 
+Note that on different runs, deviations of up to ~20% have been observed.
+That means the results above should only be used as a reference and it
+doesn't mean, for example, that OpenMP is faster than pthread (actually for
+some runs, pthread was faster than openmp).
+
 Note that wall-time is what's actually relevant. The CPU-time for a threaded
 program is obviously higher than for a sequential one due to increased overhead.
 In any case, the results of the parallelization result in a smaller wall-time.

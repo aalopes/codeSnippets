@@ -18,5 +18,9 @@ No race conditions should arise.
 I have made basically no attempts to optimize this, but it shoud give an
 idea of the overhead of the different designs.
 
+Note also that no compiler optimization flags were used, to avoid optimizing
+out something. Again, this is not what would be expected in a real world
+scenario.
+
 Alexandre Lopes
 2016
