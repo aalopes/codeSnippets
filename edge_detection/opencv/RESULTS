@@ -1,0 +1,63 @@
+Some results. No averaging has been done, such
+that this represents a single run. To be improved
+if I find the time:
+
+canny - opencv 2.4.8:
+
+Elapsed CPU time (IO)       0.076677
+Elapsed CPU time (Convert)  0.014922
+Elapsed CPU time (Canny)    0.058915
+Elapsed wall time (IO)      0.0773509
+Elapsed wall time (Convert) 0.0164256
+Elapsed wall time (Canny)   0.0906975
+Elapsed OCV time (IO)       0.0773482
+Elapsed OCV time (Convert)  0.0164253
+Elapsed OCV time (Canny)    0.0906978
+
+canny - opencv 3.2.0
+
+Elapsed CPU time (IO)       0.284961
+Elapsed CPU time (Convert)  0.118712
+Elapsed CPU time (Canny)    0.033721
+Elapsed wall time (IO)      3.06596
+Elapsed wall time (Convert) 0.686979
+Elapsed wall time (Canny)   0.0337327
+Elapsed OCV time (IO)       3.06594
+Elapsed OCV time (Convert)  0.686979
+Elapsed OCV time (Canny)    0.0337302
+
+Elapsed CPU time (IO)       0.096648
+Elapsed CPU time (Convert)  0.033747
+Elapsed CPU time (Canny)    0.020149
+Elapsed wall time (IO)      0.103759
+Elapsed wall time (Convert) 0.0295354
+Elapsed wall time (Canny)   0.0200032
+Elapsed OCV time (IO)       0.103756
+Elapsed OCV time (Convert)  0.029538
+Elapsed OCV time (Canny)    0.0200021
+
+canny_cuda - opencv 3.2.0
+
+Elapsed CPU time (IO)       0.325343
+Elapsed CPU time (Convert)  0.001318
+Elapsed CPU time (Canny)    0.011702
+Elapsed wall time (IO)      0.325056
+Elapsed wall time (Convert) 0.00132009
+Elapsed wall time (Canny)   0.0117051
+Elapsed OCV time (IO)       0.325048
+Elapsed OCV time (Convert)  0.00131695
+Elapsed OCV time (Canny)    0.0117051
+
+canny opengl - opencv 3.2.0
+
+Elapsed CPU time (IO)       0.221936
+Elapsed CPU time (Convert)  0.005476
+Elapsed CPU time (Canny)    0.019789
+Elapsed wall time (IO)      0.235192
+Elapsed wall time (Convert) 0.00547822
+Elapsed wall time (Canny)   0.00974832
+Elapsed OCV time (IO)       0.235185
+Elapsed OCV time (Convert)  0.00547785
+Elapsed OCV time (Canny)    0.00974663
+
+2016 Alexandre Lopes

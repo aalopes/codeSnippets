@@ -1,4 +1,6 @@
 %% Canny edge detection using the GPU (CUDA), with code benchmarking
+%  Unfortunately this doesn't work at the moment since Canny is currently
+%  not supported on the GPU!
 %
 % 2016 Alexandre Lopes
 

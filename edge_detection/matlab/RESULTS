@@ -1,0 +1,19 @@
+Note that Matlab is always much slower on the first run.
+
+=======================================
+CPU (results in s):
+
+First run:
+Elapsed wall time (IO)    0
+Elapsed wall time (Conv)  8.396990e-01
+Elapsed wall time (Canny) 2.041845e+00
+
+Second run:
+Elapsed wall time (IO)    0
+Elapsed wall time (Conv)  5.738000e-03
+Elapsed wall time (Canny) 1.184340e-01
+
+Note: for some reason the IO timing is not working
+(but did work on Windows with Matlab 2016a).
+
+2016 Alexandre Lopes
