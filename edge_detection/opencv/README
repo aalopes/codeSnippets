@@ -1,0 +1,6 @@
+To build the samples, run
+cmake ..
+inside of the build folders.
+
+2016 Alexandre Lopes
+

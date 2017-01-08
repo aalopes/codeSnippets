@@ -1,0 +1,6 @@
+This only works with OpenCV >=3.0 due to UMat.
+UMat should automatically use an OpenGL enabled card
+if it finds one, reverting to the CPU if it doesn't
+find one.
+
+2016 Alexandre Lopes
